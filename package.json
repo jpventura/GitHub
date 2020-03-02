@@ -11,7 +11,8 @@
   "homepage": "https://github.com/jpventura/GitHub#README",
   "husky": {
     "hooks": {
-      "commit-msg": "node_modules/@commitlint/cli/lib/cli.js -E HUSKY_GIT_PARAMS"
+      "commit-msg": "node_modules/@commitlint/cli/lib/cli.js -E HUSKY_GIT_PARAMS",
+      "pre-push": "./gradlew lint"
     }
   },
   "keywords": [

@@ -6,6 +6,10 @@ android {
     compileSdkVersion versions.compile_sdk
     buildToolsVersion versions.build_tools
 
+    configurations {
+        ktlint
+    }
+
     defaultConfig {
         applicationId "com.luizalabs.github"
         minSdkVersion versions.min_sdk
@@ -17,14 +21,8 @@ android {
     }
 
     buildTypes {
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            testCoverageEnabled true
-        }
-
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             testCoverageEnabled false
         }
@@ -33,6 +31,8 @@ android {
 }
 
 dependencies {
+    ktlint "com.pinterest:ktlint:${versions.ktlint}"
+
     implementation "androidx.appcompat:appcompat:${versions.app_compat}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraint_layout}"
     implementation "androidx.core:core-ktx:1.2.0"
@@ -46,3 +46,20 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:1.1.1"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
 }
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "src/**/*.kt"
+}
+lint.dependsOn ktlint
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "-F", "src/**/*.kt"
+}
+lintFix.dependsOn ktlint
+    
