@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+
+    implementation "androidx.core:core-ktx:${versions.core_ktx}"
+    implementation "com.google.dagger:dagger:${versions.dagger}"
+    implementation "com.squareup.okhttp3:okhttp:${versions.okHttp}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestImplementation "androidx.test.ext:junit:${versions.junit_ext}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+
+    testImplementation "junit:junit:${versions.junit}"
+}

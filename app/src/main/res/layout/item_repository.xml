@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.GitHub.CardView.Repository"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_repository_avatar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_right"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_repository_forks"
+            android:layout_width="@dimen/size_item_icon"
+            android:layout_height="@dimen/size_item_icon"
+            android:src="@drawable/ic_fork"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_bottom"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/label_repositories_fork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textAppearance="@style/TextAppearance.GitHub.Body2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_repository_forks"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_bottom"
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="Forks" />
+
+        <ImageView
+            android:id="@+id/image_repository_stars"
+            android:layout_width="@dimen/size_item_icon"
+            android:layout_height="@dimen/size_item_icon"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_repositories_fork"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_bottom" />
+
+        <TextView
+            android:id="@+id/label_repository_star"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.GitHub.Body2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_repository_stars"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_bottom"
+            tools:text="99" />
+
+        <TextView
+            android:id="@+id/label_repository_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:ellipsize="end"
+            android:maxLength="24"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.GitHub.Title1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/label_repository_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textAppearance="@style/TextAppearance.GitHub.Body1"
+            app:layout_constraintBottom_toTopOf="@+id/label_repository_star"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/label_repository_title"
+            tools:text="Neque porro quisquam Neque porro quisquam Neque porro quisquam Neque porro quisquam Neque porro quisquam Neque porro quisquam Neque porro quisquam" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/activity_vertical_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="42dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="100dp" />
+
+        <TextView
+            android:id="@+id/label_repository_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.GitHub.Title2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/guideline_right"
+            app:layout_constraintTop_toBottomOf="@+id/image_repository_avatar"
+            tools:text="login" />
+
+        <TextView
+            android:id="@+id/label_repository_ownername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:ellipsize="end"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_right"
+            app:layout_constraintTop_toBottomOf="@+id/label_repository_login"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Real Name   " />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,68 @@
+<resources>
+
+    <style name="Theme.GitHub" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Colors -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorError">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="titleTextColor">?android:attr/textColorPrimary</item>
+
+        <!-- Widget styles -->
+        <item name="materialCardViewStyle">@style/Widget.GitHub.CardView.Repository</item>
+
+        <!-- Type styles -->
+        <item name="textAppearanceBody1">@style/TextAppearance.GitHub.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.GitHub.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.GitHub.Caption</item>
+    </style>
+
+    <style name="TextAppearance.GitHub.Body1" parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="android:maxLines">3</item>
+        <item name="android:textColor">@color/subtitleTextColor</item>
+    </style>
+
+    <style name="TextAppearance.GitHub.Body2" parent="@style/TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/textColorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.GitHub.Caption" parent="@style/TextAppearance.MaterialComponents.Caption" />
+
+    <style name="TextAppearance.GitHub.Headline1" parent="@style/TextAppearance.MaterialComponents.Headline1" />
+
+    <style name="TextAppearance.GitHub.Headline2" parent="@style/TextAppearance.MaterialComponents.Headline2" />
+
+    <style name="TextAppearance.GitHub.Headline3" parent="@style/TextAppearance.MaterialComponents.Headline3" />
+
+    <style name="TextAppearance.GitHub.Headline4" parent="@style/TextAppearance.MaterialComponents.Headline4" />
+
+    <style name="TextAppearance.GitHub.Headline5" parent="@style/TextAppearance.MaterialComponents.Headline5" />
+
+    <style name="TextAppearance.GitHub.Headline6" parent="@style/TextAppearance.MaterialComponents.Headline6" />
+
+    <style name="TextAppearance.GitHub.Title1" parent="@style/TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.GitHub.Title2" parent="@style/TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.GitHub.Subtitle1" parent="@style/TextAppearance.MaterialComponents.Subtitle1" />
+
+    <style name="TextAppearance.GitHub.Subtitle2" parent="@style/TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">@color/subtitleTextColor</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.GitHub.Subtitle2.Inverse" parent="@style/TextAppearance.GitHub.Subtitle2">
+        <item name="android:textColor">@color/textColorSecondaryInverse</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Widget.GitHub.CardView.Repository" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="titleTextAppearance">?attr/textAppearanceBody2</item>
+    </style>
+</resources>

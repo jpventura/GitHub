@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/fragment_repositories">
+
+    <fragment
+        android:id="@+id/fragment_repositories"
+        android:name="com.jpventura.github.repositories.ui.RepositoriesFragment"
+        tools:layout="@layout/fragment_repositories"
+        android:label="RepositoriesFragment" >
+        <action
+            android:id="@+id/action_repositoriesFragment_to_issuesFragment"
+            app:destination="@id/fragment_issues" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_issues"
+        tools:layout="@layout/fragment_issue"
+        android:name="com.jpventura.github.issues.ui.IssuesFragment"
+        android:label="IssuesFragment" />
+
+</navigation>
