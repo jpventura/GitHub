@@ -1,0 +1,41 @@
+{
+  "author": {
+    "email": "contact@jpventura.com",
+    "name": "JP Ventura",
+    "url": "https://br.linkedin.com/in/jpventura"
+  },
+  "bugs": {
+    "url": "https://github.com/jpventura/GitHub/issues"
+  },
+  "description": "Magazine Luiza Android Challenge",
+  "homepage": "https://github.com/jpventura/GitHub#README",
+  "husky": {
+    "hooks": {
+      "commit-msg": "node_modules/@commitlint/cli/lib/cli.js -E HUSKY_GIT_PARAMS",
+      "pre-commit": "./gradlew check",
+      "pre-push": "./gradlew test"
+    }
+  },
+  "keywords": [
+    "android",
+    "kotlin",
+    "travis"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "github",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpventura/GitHub.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.3"
+  }
+}

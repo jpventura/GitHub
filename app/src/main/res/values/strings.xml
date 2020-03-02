@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GitHub</string>
+    <string name="hint_repositories_search">Type a programming language</string>
+    <string name="label_issues_empty">No issues found</string>
+    <string name="label_issues_error">Failed to load issues</string>
+    <string name="label_issues_loading">Loading issues</string>
+    <string name="label_repositories_empty">No repositories found</string>
+    <string name="label_repositories_error">Failed to load repositories</string>
+    <string name="label_repositories_loading">Loading repositories</string>
+    <string name="menu_repositories_search">Search</string>
+    <string name="label_issue_help">HELP</string>
+</resources>

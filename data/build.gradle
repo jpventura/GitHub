@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField 'String', 'GITHUB_BASE_URL', "\"https://api.github.com/\""
+            buildConfigField 'String', 'GITHUB_PASSWORD', "\"e29d37a5bd868e9d98f8712636d43f113084a4df\""
+            buildConfigField 'String', 'GITHUB_USERNAME', "\"jpventura\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField 'String', 'GITHUB_BASE_URL', "\"https://api.github.com/\""
+            buildConfigField 'String', 'GITHUB_PASSWORD', "\"e29d37a5bd868e9d98f8712636d43f113084a4df\""
+            buildConfigField 'String', 'GITHUB_USERNAME', "\"jpventura\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    kapt "androidx.room:room-compiler:${versions.room}"
+    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+
+    api "androidx.room:room-runtime:${versions.room}"
+    api "androidx.room:room-rxjava2:${versions.room}"
+    api "com.google.dagger:dagger:${versions.dagger}"
+    api "com.squareup.okhttp3:logging-interceptor:${versions.okHttp}"
+    api "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+    api "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    api "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    api "io.reactivex.rxjava2:rxandroid:${versions.rxandroid}"
+    api "io.reactivex.rxjava2:rxjava:${versions.rxjava}"
+    api project(':core-domain')
+    api project(':domain')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.13'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation "androidx.test.ext:junit:${versions.junitExt}"
+    androidTestImplementation "androidx.test:runner:${versions.testRunner}"
+}
