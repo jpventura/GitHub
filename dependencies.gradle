@@ -13,6 +13,7 @@ ext {
             ktlint              : '0.36.0',
             leak_canary         : '1.6.3',
             material            : '1.0.0',
-            test_runner         : '1.2.0'
+            test_runner         : '1.2.0',
+            timber              : '4.7.1'
     ]
 }
