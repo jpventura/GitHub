@@ -1,3 +1,4 @@
 rootProject.name='GitHub'
 include ':app'
 include ':core-domain'
+include ':domain'
