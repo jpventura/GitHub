@@ -2,7 +2,7 @@ package com.luizalabs.github
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.luizalabs.github.ui.main.MainFragment
+import com.luizalabs.github.repositories.RepositoriesFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
+                    .replace(R.id.container, RepositoriesFragment.newInstance())
                     .commitNow()
         }
     }
