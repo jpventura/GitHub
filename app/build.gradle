@@ -10,6 +10,10 @@ android {
         ktlint
     }
 
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     defaultConfig {
         applicationId "com.luizalabs.github"
         minSdkVersion versions.min_sdk
@@ -26,6 +30,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             testCoverageEnabled false
         }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
 
 }
@@ -47,6 +55,8 @@ dependencies {
     androidTestImplementation "androidx.navigation:navigation-testing:${versions.nav_version}"
     androidTestImplementation "androidx.test.ext:junit:1.1.1"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
+
+    debugImplementation "androidx.fragment:fragment-testing:${versions.fragment_test}"
 
     testImplementation "junit:junit:${versions.junit}"
 }
