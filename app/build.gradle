@@ -38,14 +38,17 @@ dependencies {
     implementation "androidx.core:core-ktx:1.2.0"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.nav_version}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.nav_version}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.jakewharton.timber:timber:${versions.timber}"
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    testImplementation "junit:junit:${versions.junit}"
-
+    androidTestImplementation "androidx.navigation:navigation-testing:${versions.nav_version}"
     androidTestImplementation "androidx.test.ext:junit:1.1.1"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
+
+    testImplementation "junit:junit:${versions.junit}"
 }
 
 task ktlint(type: JavaExec, group: "verification") {
@@ -63,4 +66,3 @@ task ktlintFormat(type: JavaExec, group: "formatting") {
     args "-F", "src/**/*.kt"
 }
 lintFix.dependsOn ktlint
-    
