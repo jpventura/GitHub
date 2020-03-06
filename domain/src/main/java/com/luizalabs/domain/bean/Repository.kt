@@ -1,7 +1,5 @@
 package com.luizalabs.domain.bean
 
-import com.google.gson.annotations.SerializedName
-
 data class Repository(
     val description: String,
     val forks: Int,
@@ -10,8 +8,6 @@ data class Repository(
     val language: String,
     val name: String,
     val owner: Owner,
-
-    @SerializedName("stargazers_count")
     val stargazersCount: Int,
     val user: User? = null
 )
