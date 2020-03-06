@@ -8,7 +8,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:${versions.rxandroid}"
     implementation "io.reactivex.rxjava2:rxjava:${versions.rxjava}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
