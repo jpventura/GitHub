@@ -34,6 +34,7 @@ class RepositoriesFragmentTest {
         val args = Bundle().apply {
             putInt("selectedListItem", 0)
         }
+
         launchFragmentInContainer<RepositoriesFragment>(
             fragmentArgs = args,
             factory = ViewFactory()
@@ -45,10 +46,13 @@ class RepositoriesFragmentTest {
         val args = Bundle().apply {
             putInt("selectedListItem", 0)
         }
+
         launchFragmentInContainer<RepositoriesFragment>(
             fragmentArgs = args,
             factory = ViewFactory()
-        )
+        ).onFragment {
+            it.state
+        }
     }
 
     @Test

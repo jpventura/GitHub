@@ -30,5 +30,5 @@ class UserBuilder {
         login = requireNotNull(login),
         name = requireNotNull(name)
     )
-
 }
+    

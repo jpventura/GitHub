@@ -4,11 +4,12 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.luizalabs.core.domain.bean.Bean
 
 @Entity(tableName = "owners")
 data class Owner(
     @PrimaryKey
-    val id: Long,
+    override val id: Long,
 
     @SerializedName("avatar_url")
     val avatarUrl: String,
@@ -24,4 +25,4 @@ data class Owner(
     @SerializedName("user_url")
     @ColumnInfo(name = "user_url")
     val userUrl: String
-)
+) : Bean<Long>

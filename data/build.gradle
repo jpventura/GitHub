@@ -26,10 +26,14 @@ android {
 }
 
 dependencies {
+    api "io.reactivex.rxjava2:rxandroid:${versions.rxandroid}"
+    api "io.reactivex.rxjava2:rxjava:${versions.rxjava}"
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation "androidx.room:room-runtime:${versions.room}"
+    implementation "com.google.code.gson:gson:${versions.gson}"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':domain')
 

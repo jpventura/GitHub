@@ -4,11 +4,12 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.luizalabs.core.domain.bean.Bean
 
 @Entity(tableName = "repositories")
 data class Repository(
     @PrimaryKey
-    val id: Long,
+    override val id: Long,
 
     val description: String,
 
@@ -23,4 +24,4 @@ data class Repository(
     @SerializedName("stargazers_count")
     @ColumnInfo(name = "stargazers_count")
     val stargazersCount: Int
-)
+) : Bean<Long>

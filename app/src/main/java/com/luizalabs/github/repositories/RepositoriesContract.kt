@@ -1,13 +1,7 @@
 package com.luizalabs.github.repositories
 
+import androidx.annotation.StringRes
+
 interface RepositoriesContract {
 
-    interface ViewModel {
-
-
-    }
-
-    interface View {
-
-    }
 }

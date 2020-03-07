@@ -1,11 +1,17 @@
 package com.luizalabs.github.ktx
 
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
-import java.io.Serializable
+import com.google.gson.*
+import com.google.gson.reflect.TypeToken
+import com.luizalabs.domain.bean.Repository
+import org.json.JSONObject
 import java.math.BigDecimal
 import java.math.BigInteger
 import java.util.*
+
 
 interface KParcelable : Parcelable {
     override fun describeContents() = 0
@@ -78,4 +84,115 @@ fun <T : Parcelable> Parcel.writeTypedObjectCompat(
     value: T?, parcelableFlags: Int
 ) = writeNullable(value) { it.writeToParcel(this, parcelableFlags) }
 
-fun <T : Serializable> Parcel.read
+final class ListTypeToken<E : Any> : TypeToken<List<E>>()
+
+final class MapTypeToken<String, V : Any> : TypeToken<Map<String, V>>()
+
+final class MutableMapTypeToken<String, V : Any> : TypeToken<MutableMap<String, V>>()
+
+
+
+fun Bundle.putNumber(key: String, number: Number) {
+    when (number) {
+        is Byte -> putByte(key, number)
+        is Double -> putDouble(key, number)
+        is Float -> putFloat(key, number)
+        is Int -> putInt(key, number)
+        is Long -> putLong(key, number)
+        is Short -> putShort(key, number)
+    }
+}
+
+fun Bundle.putMap(key: String, map: Map<String, Any>) {
+
+    Bundle().apply {  }
+}
+
+fun Parcel.putNumber(number: Number) {
+    when (number) {
+        is Byte -> writeByte(number)
+        is Double -> writeDouble(number)
+        is Float -> writeFloat(number)
+        is Int -> writeInt(number)
+        is Long -> writeLong(number)
+        is Short -> writeInt(number.toInt())
+    }
+}
+
+fun bundle(key: String, value: JsonPrimitive) {
+    val bundle = Bundle().apply {
+        if (value.isBoolean) {
+            putBoolean(key, value.asBoolean)
+        } else if (value.isNumber) {
+            put(key, value.asBoolean)
+            value.asNumber
+        } else if (value.isString) {
+            value.asString
+        }
+    }
+    if (value.isBoolean) {
+        value.asBoolean
+    } else if (value.isNumber) {
+        value.asNumber
+    } else if (value.isString) {
+        value.asString
+    }
+
+
+}
+fun rec(array: JsonArray): List<Any> {
+    JsonPri
+    return array.map {
+        when (it) {
+            is JsonArray -> rec(it.asJsonArray)
+            is JsonObject -> rec(it.asJsonObject)
+            is JsonNull -> it.asJsonNull as Any
+            else -> it.asJsonPrimitive as Any
+        }
+    }.toList()
+}
+
+fun banana(json: JSONObject): Bundle {
+    json
+}
+fun <E : Parcelable> rec2(array: JsonArray): List<E> {
+    array.map {
+        val element = when (it) {
+            is JsonArray -> rec(it.asJsonArray)
+            // is JsonObject -> rec(it.asJsonObject)
+            is JsonNull -> null
+            else -> it.
+        }
+    }
+}
+
+fun rec(tree: JsonObject): Map<String, Any> {
+    return tree.entrySet()
+        .map {
+            val value = when (it.value) {
+                is JsonArray -> rec(it.value.asJsonArray)
+                is JsonObject -> rec(it.value.asJsonObject)
+                is JsonNull -> it.value.asJsonNull as Any
+                else -> it.value.asJsonPrimitive.
+            }
+            it.key to value
+        }
+        .toList()
+        .toMap()
+}
+
+fun foo(value: Repository, json: JSONObject) {
+    val gson = Gson()
+
+
+    val type = object : TypeToken<Map<String, Any>>() {}.type
+    val m: MapTypeToken<String, Any> =
+        gson.fromJson(gson.toJson(value), MapTypeToken<String, Any>().type)
+
+    val n: Map<String, Any> = rec(gson.toJsonTree(value).asJsonObject).toMutableMap()
+
+
+    val p = Parcel.obtain()
+    p.write
+    TODO()
+}

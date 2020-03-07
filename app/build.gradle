@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlinx-serialization'
 
 android {
     compileSdkVersion versions.compile_sdk
@@ -49,8 +50,10 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:${versions.nav_version}"
     implementation "androidx.navigation:navigation-ui-ktx:${versions.nav_version}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlin_serialize}"
     implementation "com.jakewharton.timber:timber:${versions.timber}"
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(path: ':domain')
 
     androidTestImplementation "androidx.navigation:navigation-testing:${versions.nav_version}"
     androidTestImplementation "androidx.test.ext:junit:1.1.1"
