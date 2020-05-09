@@ -1,2 +1,3 @@
 rootProject.name = "GitHub"
+include ':core-android'
 include ':core-domain'
