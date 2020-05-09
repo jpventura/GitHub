@@ -20,6 +20,9 @@ compileKotlin {
 }
 
 dependencies {
+    api libraries.rxAndroid
+    api libraries.rxJava
+
     implementation libraries.kotlin
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
