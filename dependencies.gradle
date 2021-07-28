@@ -15,6 +15,10 @@ ext {
             lifecycle       : "2.3.1",
             material        : "1.4.0",
 
+            // Libraries
+            rxAndroid       : "2.1.1",
+            rxJava          : "2.2.10",
+
             // Instrumented testing libraries
             espresso        : "3.4.0",
 
@@ -34,6 +38,8 @@ ext {
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
             liveDataKtx           : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
             material              : "com.google.android.material:material:${versions.material}",
+            rxAndroid             : "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}",
+            rxJava                : "io.reactivex.rxjava2:rxjava:${versions.rxJava}",
             viewModelKtx          : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
     ]
 
