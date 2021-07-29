@@ -1,0 +1,31 @@
+apply plugin: "java-library"
+apply plugin: "kotlin"
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+    }
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation libraries.kotlin
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    testApi testLibraries.junit
+}
+
+repositories {
+    mavenCentral()
+}
