@@ -16,6 +16,7 @@ ext {
             material        : "1.4.0",
 
             // Libraries
+            kodein          : "6.5.0",
             rxAndroid       : "2.1.1",
             rxJava          : "2.2.10",
 
@@ -35,6 +36,8 @@ ext {
             constraintLayout      : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
             coreKtx               : "androidx.core:core-ktx:${versions.core}",
             junit                 : "junit:junit:${versions.junit}",
+            kodein                : "org.kodein.di:kodein-di-generic-jvm:${versions.kodein}",
+            kodeinAndroid         : "org.kodein.di:kodein-di-framework-android-x:${versions.kodein}",
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
             liveDataKtx           : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
             material              : "com.google.android.material:material:${versions.material}",
