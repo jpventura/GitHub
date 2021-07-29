@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="1.8">
       <module name="GitHub.app" target="11" />
       <module name="GitHub.core-android" target="11" />
+      <module name="GitHub.data" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

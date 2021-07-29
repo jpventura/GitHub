@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/GitHub.iml" filepath="$PROJECT_DIR$/.idea/modules/GitHub.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-android/GitHub.core-android.iml" filepath="$PROJECT_DIR$/.idea/modules/core-android/GitHub.core-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-domain/GitHub.core-domain.iml" filepath="$PROJECT_DIR$/.idea/modules/core-domain/GitHub.core-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/GitHub.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/GitHub.data.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/GitHub.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/GitHub.domain.iml" />
     </modules>
   </component>
