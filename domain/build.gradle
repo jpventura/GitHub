@@ -19,5 +19,6 @@ dependencies {
     implementation libraries.kodein
     implementation libraries.kotlin
 
+    testImplementation 'org.mockito:mockito-core:2.25.1'
     testImplementation testLibraries.junit
 }
