@@ -17,6 +17,7 @@ ext {
             material        : "1.4.0",
 
             // Libraries
+            glide           : "4.9.0",
             kodein          : "6.5.0",
             rxAndroid       : "2.1.1",
             rxJava          : "2.2.10",
@@ -30,12 +31,14 @@ ext {
     ]
 
     annotationProcessors = [
+            glide         : "com.github.bumptech.glide:compiler:${versions.glide}",
     ]
 
     libraries = [
             appCompat             : "androidx.appcompat:appcompat:${versions.jetpack}",
             constraintLayout      : "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
             coreKtx               : "androidx.core:core-ktx:${versions.core}",
+            glide                 : "com.github.bumptech.glide:glide:${versions.glide}",
             junit                 : "junit:junit:${versions.junit}",
             kodein                : "org.kodein.di:kodein-di-generic-jvm:${versions.kodein}",
             kodeinAndroid         : "org.kodein.di:kodein-di-framework-android-x:${versions.kodein}",
